@@ -62,3 +62,14 @@ Refer config from ```nginx/nginx.conf```
 To uninstall the chart and remove all deployed resources, run:
 
 ```helm uninstall kana-helm-demo```
+
+## GitHub Actions Workflow
+The deployment github action is part of ```helm-deployment-workflow.yaml``` Please move that to ```.github/workflows/deploy.yaml``` to reflect in github actions workflow.
+
+### Adding secrets
+To add the KUBE_CONFIG_DATA secret to your GitHub repository:
+Convert your kubeconfig file to base64:
+```cat ~/.kube/config | base64```
+Go to your GitHub repository, navigate to Settings > Secrets and variables > Actions, and click New repository secret.
+Name the secret KUBE_CONFIG_DATA and paste the base64-encoded content.
+
