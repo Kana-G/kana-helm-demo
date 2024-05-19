@@ -54,6 +54,10 @@ You can override the default values by creating your own values.yaml file and us
 
 ```helm install kana-helm-demo ./kana-helm-demo -f your-values.yaml```
 
+## Nginx Configuration
+The Nginx reverse proxy configuration is specified in nginx/nginx.conf and applied using a ConfigMap:
+Refer config from ```nginx/nginx.conf```
+
 ## Cleaning up
 To uninstall the chart and remove all deployed resources, run:
 
