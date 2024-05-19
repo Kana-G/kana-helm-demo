@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-service2
+spec:
+  replicas: {{ .Values.pythonService2.replicas }}
+  selector:
+    matchLabels:
+      app: python-service2
+  template:
+    metadata:
+      labels:
+        app: python-service2
+    spec:
+      containers:
+        - name: python-service2
+          image: {{ .Values.pythonService2.image }}
+          ports:
+            - containerPort: 5001
+          command: ["python", "app.py"]

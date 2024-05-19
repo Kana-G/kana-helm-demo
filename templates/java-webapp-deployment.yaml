@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-webapp
+spec:
+  replicas: {{ .Values.javaWebApp.replicas }}
+  selector:
+    matchLabels:
+      app: java-webapp
+  template:
+    metadata:
+      labels:
+        app: java-webapp
+    spec:
+      containers:
+        - name: java-webapp
+          image: {{ .Values.javaWebApp.image }}
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-ui
+spec:
+  replicas: {{ .Values.reactUI.replicas }}
+  selector:
+    matchLabels:
+      app: react-ui
+  template:
+    metadata:
+      labels:
+        app: react-ui
+    spec:
+      containers:
+        - name: react-ui
+          image: {{ .Values.reactUI.image }}
+          ports:
+            - containerPort: 3000
+          command: ["npm", "start"]

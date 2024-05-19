@@ -1,0 +1,44 @@
+nginx:
+  image: nginx:latest
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 80
+
+javaWebApp:
+  image: openjdk:11-jre-slim
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 8080
+
+reactUI:
+  image: node:14
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 3000
+
+pythonService1:
+  image: python:3.9-slim
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 5000
+
+pythonService2:
+  image: python:3.9-slim
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 5001
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: kana-helm-demo.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
