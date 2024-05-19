@@ -9,24 +9,24 @@ This Helm chart deploys a multi-service application on Kubernetes. The stack inc
 
 ## Chart Structure
 
-├── Chart.yaml
-├── values.yaml
-├── templates/
-│ ├── _helpers.tpl
-│ ├── nginx-deployment.yaml
-│ ├── nginx-service.yaml
-│ ├── nginx-configmap.yaml
-│ ├── java-webapp-deployment.yaml
-│ ├── java-webapp-service.yaml
-│ ├── react-ui-deployment.yaml
-│ ├── react-ui-service.yaml
-│ ├── python-service1-deployment.yaml
-│ ├── python-service1-service.yaml
-│ ├── python-service2-deployment.yaml
-│ ├── python-service2-service.yaml
-│ └── ingress.yaml
-└── nginx/
-└── nginx.conf
+├── Chart.yaml<br>
+├── values.yaml<br>
+├── templates/<br>
+│ ├── _helpers.tpl<br>
+│ ├── nginx-deployment.yaml<br>
+│ ├── nginx-service.yaml<br>
+│ ├── nginx-configmap.yaml<br>
+│ ├── java-webapp-deployment.yaml<br>
+│ ├── java-webapp-service.yaml<br>
+│ ├── react-ui-deployment.yaml<br>
+│ ├── react-ui-service.yaml<br>
+│ ├── python-service1-deployment.yaml<br>
+│ ├── python-service1-service.yaml<br>
+│ ├── python-service2-deployment.yaml<br>
+│ ├── python-service2-service.yaml<br>
+│ └── ingress.yaml<br>
+└── nginx/<br>
+   └── nginx.conf<br>
 
 
 ## Installation
@@ -40,11 +40,11 @@ This Helm chart deploys a multi-service application on Kubernetes. The stack inc
 Accessing the Application
 Once the chart is successfully deployed, you can access the services as follows:
 
-Nginx (Reverse Proxy): http://<nginx-service-IP>
-React UI: http://<react-ui-service-IP>:3000
-Java Web Application: http://<java-webapp-service-IP>:8080
-Python Service 1: http://<python-service1-IP>:5000
-Python Service 2: http://<python-service2-IP>:5001
+Nginx (Reverse Proxy): http://nginx-service-IP<br>
+React UI: http://react-ui-service-IP:3000<br>
+Java Web Application: http://java-webapp-service-IP:8080<br>
+Python Service 1: http://python-service1-IP:5000<br>
+Python Service 2: http://python-service2-IP:5001<br>
 If Ingress is enabled and configured, access the application via the Ingress host:
 
 http://kana-helm-demo.local
